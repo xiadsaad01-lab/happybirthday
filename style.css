@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body {
+  background: #ffdde8;
+  overflow: hidden;
+}
+/* password screen */
+#password-screen {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffb6c1, #ffc0cb);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+password-wrapper {
+    position: relative;
+}
+#password-input {
+    padding-right: 30px;
+}
+#toggle-password {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+/* Heart background */
+.hearts-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+.heart {
+  position: absolute;
+  color: #ff2f6d;
+  opacity: 0.8;
+  animation: float 10s linear infinite;
+}
+@keyframes float {
+  from {
+    transform: translateY(110vh) scale(1);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.9;
+  }
+  to {
+    transform: translateY(-10vh) scale(1.5);
+    opacity: 0;
+  }
+}
+/* Password */
+.password-box {
+  position: relative;
+  background: rgba(255,255,255,0.25);
+  padding: 40px;
+  border-radius: 20px;
+  text-align: center;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+.password-box:hover {
+  transform: scale(1.05);
+}
+.password-box h2 {
+  margin-bottom: 20px;
+  color: #ff2f6d;
+}
+.password-box input {
+  width: 220px;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-bottom: 15px;
+}
+.password-box button {
+  padding: 10px 30px;
+  border: none;
+  border-radius: 20px;
+  background: #ff2f6d;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+/* intro */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #ffd1dc, #ffe6ec);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+#intro-text {
+  color: #c2185b;
+  font-size: 2.5rem;
+  text-align: center;
+  line-height: 1.6;
+}
+/* start button */
+#start-btn {
+  animation: fadeBlink 2.5s infinite;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff; /* ← ده المهم */
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-shadow: 0 0 12px rgba(255,255,255,0.8);
+  display: none;
+  cursor: pointer;
+  z-index: 6;
+}
+ @keyframes fadeBlink {
+  0%   { opacity: 0; }
+  40%  { opacity: 1; }
+  60%  { opacity: 1; }
+  100% { opacity: 0; }
+}
+/* first vedio */
+#birthday-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+/* Final */
+#final {
+  position: fixed;
+  inset: 0;
+  background: #0b0f1a;
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.final-content {
+  text-align: center;
+}
+#final-message {
+  color: #ffdbe6;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  font-family: 'Great Vibes', cursive;
+  line-height: 1.9;
+}
+/* heart canvas */
+#heart-canvas {
+  width: 180px;
+  height: 180px;
+}
+#password-success {
+  margin-top: 15px;
+  font-size: 1.2rem;
+  color: #ff2f6d;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+#second-video {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  z-index: 2;
+}
+#video-overlay {
+  position: fixed;
+  inset: 0;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  text-align: center;
+  color: #ffdbe6;
+}
+.heart-text {
+  width: 140px;
+  height: 120px;
+  background: #ff2f6d;
+  clip-path: path("M70 120 C-20 40 40 -20 70 20 C100 -20 160 40 70 120");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  animation: beat 1.6s infinite;
+  margin-bottom: 25px;
+}
+@keyframes beat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+#overlay-message {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  max-width: 80%;
+}
+heart {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heart-name {
+  position: absolute;
+  color: white;
+  font-size: 0.45em;
+  font-weight: 600;
+  pointer-events: none;
+}
+#skip-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 7;
+  background: rgba(0,0,0,0.45);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: none;
+  transition: opacity 1.5s ease;
+}
+#skip-btn:hover {
+  background: rgba(0,0,0,0.65);
+}
+.heart-text {
+  color: #fff;
+  animation: beat 1.6s infinite, glow 1.6s infinite;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow:
+      0 0 6px #ffd1dc,
+      0 0 12px #ff9bb8;
+  }
+  50% {
+    text-shadow:
+      0 0 12px #ffd1dc,
+      0 0 24px #ff9bb8,
+      0 0 40px #ff2f6d;
+  }
+  100% {
+    text-shadow:
+      0 0 6px #ffd1dc,
+      0 0 12px #ff9bb8;
+  }
+}
+/* خلفية اسم ROAA في شاشة المقدمة */
+.intro-bg-name {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Great Vibes', cursive;
+  font-size: 18vw; /* على طول الشاشة */
+  font-weight: 400;
+
+  color: rgba(255, 47, 109, 0.18);
+  letter-spacing: 0.25em;
+
+  text-shadow:
+    0 0 20px rgba(255, 155, 184, 0.6),
+    0 0 40px rgba(255, 47, 109, 0.4);
+
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
+/* نخلي النص الأساسي فوق الاسم */
+#intro-text {
+  position: relative;
+  z-index: 1;
+}
+/* اسم Roaa في شاشة المقدمة */
+.intro-name {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Great Vibes', cursive;
+  font-size: 20vw;          /* على طول الشاشة */
+  font-weight: 400;
+
+  color: #ff2f6d;
+  letter-spacing: 0.35em;
+
+  opacity: 0.12;
+  pointer-events: none;
+  user-select: none;
+
+  animation: roaaGlowFade 2.8s ease-in-out infinite;
+}
+
+/* أنيميشن النور */
+@keyframes roaaGlowFade {
+  0% {
+    opacity: 0.08;
+    text-shadow: 0 0 6px #ffd1dc;
+  }
+  50% {
+    opacity: 0.35;
+    text-shadow:
+      0 0 18px #ffd1dc,
+      0 0 35px #ff9bb8,
+      0 0 55px #ff2f6d;
+  }
+  100% {
+    opacity: 0.08;
+    text-shadow: 0 0 6px #ffd1dc;
+  }
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Roaa</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+<!-- Password screen -->
+<div id="password-screen">
+  <div class="hearts-bg"></div>
+
+  <div class="password-box">
+    <h2 id="password-title">💗Password💗</h2>
+
+    <div class="password-wrapper">
+      <input type="password" id="password-input" placeholder="Enter password">
+      <span id="toggle-password">👁️</span>
+    </div>
+    <button id="password-btn">Enter</button>
+    <p id="password-success"></p>
+  </div>
+</div>
+<!-- intro -->
+<div id="intro">
+  <div class="intro-bg-name">ROAA</div>
+  <h1 id="intro-text"></h1>
+</div>
+<!-- Start button -->
+<div id="start-btn">Click to start 🎵</div>
+<!-- Video -->
+<video id="birthday-video" preload="auto">
+  <source src="assets/video/happy-birthday.mp4" type="video/mp4">
+</video>
+<div id="skip-btn">Skip ⏭️</div>
+<video id="second-video" src="assets/video/romantic.mp4" muted loop></video>
+<div id="video-overlay">
+  <div class="heart-text">ROAA</div>
+  <div id="overlay-message"></div>
+</div>
+<!-- Final -->
+<div id="final">
+  <div class="final-content">
+    <p id="final-message"></p>
+    <canvas id="heart-canvas"></canvas>
+  </div>
+</div>
+<script src="main.js"></script>
+</body>
+</html>
